@@ -1,0 +1,3397 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Website Favicon Logo - Geometric Letter 'A' Emblem -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none'%3E%3Crect width='100' height='100' rx='24' fill='%23080C14'/%3E%3Crect width='96' height='96' x='2' y='2' rx='22' stroke='%2313B9FD' stroke-width='3' fill='none'/%3E%3Cpath d='M50 18L22 82H37L50 50Z' fill='%2313B9FD'/%3E%3Cpath d='M50 18L78 82H63L50 50Z' fill='%2302569B'/%3E%3Cpath d='M36 58H64L57 44H43Z' fill='%2300E5FF'/%3E%3C/svg%3E">
+
+  <!-- SEO & Meta Tags -->
+  <title>Arun Pushpan | Senior Flutter Developer & Mobile Engineer</title>
+  <meta name="description" content="Portfolio of Arun Pushpan, Flutter Developer with 3+ years experience building high-performance cross-platform Android & iOS apps. Team Lead, Bloc/GetX specialist, Firebase & REST API integration.">
+  <meta name="keywords" content="Arun Pushpan, Flutter Developer, Mobile App Developer, Dart, Cross-Platform, iOS, Android, Clan LEO, BuyIt, ReachOut, Rigging Calculator, Kerala India">
+  <meta name="author" content="Arun Pushpan">
+
+  <!-- Open Graph / Social Media Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://arun-pushpan.github.io/">
+  <meta property="og:title" content="Arun Pushpan | Flutter Developer & Team Lead">
+  <meta property="og:description" content="Flutter Developer with 3+ years experience building cross-platform Android and iOS apps. 8+ scalable apps delivered for 10,000+ users.">
+  <meta property="og:image" content="https://arun-pushpan.github.io/og-image.png">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Arun Pushpan",
+    "jobTitle": "Flutter Developer & Team Lead",
+    "telephone": "+91 98478 65571",
+    "email": "arunpushpan2018@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Kerala",
+      "addressCountry": "India"
+    },
+    "sameAs": [
+      "https://github.com/Arun-pushpan",
+      "https://linkedin.com/in/arun-pushpan-54a287249"
+    ],
+    "knowsAbout": ["Flutter", "Dart", "Android", "iOS", "Bloc", "GetX", "Firebase", "REST APIs", "Clean Architecture", "Cross-Platform Mobile Development"]
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       DESIGN SYSTEM & CSS VARIABLES
+       ========================================================================== */
+    :root {
+      /* Brand Palette */
+      --flutter-blue: #02569B;
+      --flutter-cyan: #13B9FD;
+      --flutter-navy: #012B55;
+      --accent-neon: #00E5FF;
+      --accent-purple: #7C4DFF;
+      --accent-emerald: #00E676;
+
+      /* Dark Theme (Default) */
+      --bg-base: #080C14;
+      --bg-surface: rgba(15, 23, 42, 0.75);
+      --bg-surface-elevated: rgba(30, 41, 59, 0.8);
+      --bg-glass-card: rgba(15, 23, 42, 0.65);
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-glow: rgba(19, 185, 253, 0.3);
+      --text-main: #F1F5F9;
+      --text-muted: #94A3B8;
+      --text-dim: #64748B;
+      --shadow-color: rgba(0, 0, 0, 0.4);
+      --grid-line: rgba(255, 255, 255, 0.03);
+      --code-bg: #0D1117;
+      --nav-bg: rgba(8, 12, 20, 0.85);
+
+      /* Typography */
+      --font-heading: 'Plus Jakarta Sans', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-code: 'Fira Code', monospace;
+
+      /* Spacing & Transitions */
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 24px;
+      --radius-full: 9999px;
+      --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-normal: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    html.light {
+      --bg-base: #F8FAFC;
+      --bg-surface: rgba(255, 255, 255, 0.85);
+      --bg-surface-elevated: rgba(241, 245, 249, 0.9);
+      --bg-glass-card: rgba(255, 255, 255, 0.75);
+      --border-subtle: rgba(0, 0, 0, 0.08);
+      --border-glow: rgba(2, 86, 155, 0.3);
+      --text-main: #0F172A;
+      --text-muted: #475569;
+      --text-dim: #64748B;
+      --shadow-color: rgba(0, 0, 0, 0.08);
+      --grid-line: rgba(0, 0, 0, 0.03);
+      --code-bg: #1E293B;
+      --nav-bg: rgba(248, 250, 252, 0.88);
+    }
+
+    /* Base Reset */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      transition: background-color var(--transition-normal), color var(--transition-normal);
+      position: relative;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg-base);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(19, 185, 253, 0.25);
+      border-radius: 5px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--flutter-cyan);
+    }
+
+    /* Utility Classes */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, var(--flutter-cyan) 0%, #3B82F6 50%, var(--accent-neon) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.9rem;
+      border-radius: var(--radius-full);
+      background: rgba(19, 185, 253, 0.1);
+      border: 1px solid rgba(19, 185, 253, 0.25);
+      color: var(--flutter-cyan);
+      font-size: 0.825rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 650px;
+      margin-bottom: 3rem;
+    }
+
+    .glass-card {
+      background: var(--bg-glass-card);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: 0 10px 30px var(--shadow-color);
+      transition: transform var(--transition-normal), border-color var(--transition-normal), box-shadow var(--transition-normal);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .glass-card:hover {
+      border-color: var(--border-glow);
+      box-shadow: 0 15px 35px rgba(19, 185, 253, 0.15);
+    }
+
+    /* Background Ambient Gradients */
+    .bg-grid {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-image: 
+        linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .glow-orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(120px);
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.45;
+    }
+    .glow-1 {
+      top: -100px;
+      right: -100px;
+      width: 500px;
+      height: 500px;
+      background: var(--flutter-blue);
+    }
+    .glow-2 {
+      bottom: 20%;
+      left: -150px;
+      width: 600px;
+      height: 600px;
+      background: rgba(19, 185, 253, 0.25);
+    }
+
+    /* Custom Cursor Glow */
+    #cursor-glow {
+      position: fixed;
+      width: 350px;
+      height: 350px;
+      margin-top: -175px;
+      margin-left: -175px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(19, 185, 253, 0.12) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 9999;
+      transition: transform 0.08s ease-out;
+      display: none;
+    }
+    @media (pointer: fine) {
+      #cursor-glow { display: block; }
+    }
+
+    /* Buttons & Material Ripple */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      padding: 0.85rem 1.8rem;
+      border-radius: var(--radius-full);
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      outline: none;
+      position: relative;
+      overflow: hidden;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+      z-index: 1;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #02569B 0%, #13B9FD 100%);
+      color: #FFFFFF;
+      box-shadow: 0 4px 20px rgba(19, 185, 253, 0.35);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(19, 185, 253, 0.5);
+    }
+    .btn-secondary {
+      background: var(--bg-surface-elevated);
+      color: var(--text-main);
+      border: 1px solid var(--border-subtle);
+    }
+    .btn-secondary:hover {
+      background: rgba(19, 185, 253, 0.15);
+      border-color: var(--flutter-cyan);
+      transform: translateY(-2px);
+    }
+
+    .ripple {
+      position: absolute;
+      border-radius: 50%;
+      transform: scale(0);
+      animation: ripple-effect 0.6s linear;
+      background: rgba(255, 255, 255, 0.35);
+      pointer-events: none;
+    }
+    @keyframes ripple-effect {
+      to {
+        transform: scale(4);
+        opacity: 0;
+      }
+    }
+
+    /* Section Scroll Reveal Animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ==========================================================================
+       1. SPLASH / LOADING SCREEN (WITH GEOMETRIC LETTER 'A' LOGO)
+       ========================================================================== */
+    #loader {
+      position: fixed;
+      inset: 0;
+      background: #080C14;
+      z-index: 10000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+    #loader.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .flutter-loader-logo {
+      width: 85px;
+      height: 85px;
+      position: relative;
+      animation: logo-pulse 1.8s ease-in-out infinite alternate;
+      filter: drop-shadow(0 0 25px rgba(19, 185, 253, 0.5));
+    }
+    @keyframes logo-pulse {
+      0% { transform: scale(0.95); opacity: 0.85; }
+      100% { transform: scale(1.05); opacity: 1; filter: drop-shadow(0 0 30px var(--flutter-cyan)); }
+    }
+    .loader-progress {
+      width: 180px;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 2px;
+      margin-top: 1.5rem;
+      overflow: hidden;
+      position: relative;
+    }
+    .loader-bar {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, var(--flutter-blue), var(--flutter-cyan));
+      animation: load-progress 1.2s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+    }
+    @keyframes load-progress {
+      100% { width: 100%; }
+    }
+    .loader-text {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      font-family: var(--font-code);
+      margin-top: 0.75rem;
+    }
+
+    /* ==========================================================================
+       2. HEADER & NAVBAR
+       ========================================================================== */
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--flutter-blue), var(--flutter-cyan), var(--accent-neon));
+      z-index: 2000;
+      width: 0%;
+      transition: width 0.1s linear;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1500;
+      padding: 1rem 0;
+      transition: padding 0.3s ease, background 0.3s ease;
+    }
+    header.scrolled {
+      padding: 0.65rem 0;
+      background: var(--nav-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-subtle);
+      box-shadow: 0 4px 20px var(--shadow-color);
+    }
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+      color: var(--text-main);
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 1.25rem;
+    }
+    .brand-icon {
+      width: 34px;
+      height: 34px;
+      background: #080C14;
+      border: 1px solid var(--flutter-cyan);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
+      list-style: none;
+    }
+    .nav-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color var(--transition-fast);
+      position: relative;
+    }
+    .nav-link:hover, .nav-link.active {
+      color: var(--flutter-cyan);
+    }
+    .nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--flutter-cyan);
+      border-radius: 2px;
+    }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .icon-btn {
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-main);
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+    .icon-btn:hover {
+      border-color: var(--flutter-cyan);
+      color: var(--flutter-cyan);
+      transform: scale(1.05);
+    }
+    .mobile-toggle {
+      display: none;
+    }
+
+    /* Mobile Drawer */
+    .mobile-drawer {
+      position: fixed;
+      inset: 0;
+      background: rgba(8, 12, 20, 0.95);
+      backdrop-filter: blur(25px);
+      z-index: 1400;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      transform: translateX(100%);
+      transition: transform var(--transition-normal);
+    }
+    .mobile-drawer.active {
+      transform: translateX(0);
+    }
+    .mobile-drawer a {
+      color: var(--text-main);
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+    .mobile-drawer a:hover {
+      color: var(--flutter-cyan);
+    }
+
+    /* ==========================================================================
+       3. HERO SECTION
+       ========================================================================== */
+    .hero-section {
+      min-height: 100vh;
+      padding-top: 9rem;
+      padding-bottom: 5rem;
+      display: flex;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1.25rem;
+    }
+    .chip-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.35rem 0.8rem;
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-full);
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+    .chip-badge.status-work {
+      background: rgba(0, 230, 118, 0.1);
+      border-color: rgba(0, 230, 118, 0.3);
+      color: var(--accent-emerald);
+    }
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      background: var(--accent-emerald);
+      border-radius: 50%;
+      animation: pulse-dot 1.5s infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(1.3); }
+    }
+
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2.5rem, 5vw, 3.75rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-typing-wrapper {
+      font-family: var(--font-heading);
+      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      min-height: 2.2rem;
+      display: flex;
+      align-items: center;
+    }
+    .typed-cursor {
+      display: inline-block;
+      width: 3px;
+      height: 1.3em;
+      background-color: var(--flutter-cyan);
+      margin-left: 4px;
+      animation: blink 0.8s infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    .hero-bio {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      max-width: 560px;
+    }
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    /* 3D Phone Mockup Container */
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      perspective: 1200px;
+    }
+    .phone-container {
+      position: relative;
+      width: 270px;
+      height: 540px;
+      background: #000;
+      border-radius: 40px;
+      padding: 10px;
+      box-shadow: 
+        0 25px 50px -12px rgba(0, 0, 0, 0.7),
+        0 0 0 2px rgba(255, 255, 255, 0.15),
+        0 0 40px rgba(19, 185, 253, 0.2);
+      transform: rotateY(-12deg) rotateX(6deg);
+      transition: transform 0.5s ease;
+      z-index: 2;
+      animation: float-phone 6s ease-in-out infinite;
+    }
+    .phone-container:hover {
+      transform: rotateY(0deg) rotateX(0deg) scale(1.02);
+    }
+    @keyframes float-phone {
+      0%, 100% { transform: rotateY(-12deg) rotateX(6deg) translateY(0px); }
+      50% { transform: rotateY(-12deg) rotateX(6deg) translateY(-15px); }
+    }
+
+    .phone-secondary {
+      position: absolute;
+      width: 220px;
+      height: 440px;
+      background: #000;
+      border-radius: 34px;
+      padding: 8px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+      transform: translate(-90px, 30px) rotateY(-22deg) scale(0.85);
+      z-index: 1;
+      opacity: 0.7;
+      filter: blur(1px);
+    }
+
+    /* Simulated Flutter Shopping App Screen */
+    .phone-screen {
+      width: 100%;
+      height: 100%;
+      background: #0F172A;
+      border-radius: 32px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .phone-notch {
+      width: 100px;
+      height: 18px;
+      background: #000;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      z-index: 10;
+    }
+    .app-bar {
+      padding: 24px 14px 10px 14px;
+      background: var(--flutter-navy);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #fff;
+    }
+    .app-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      font-family: var(--font-heading);
+    }
+    .app-cart-icon {
+      position: relative;
+    }
+    .cart-badge {
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      background: var(--flutter-cyan);
+      color: #000;
+      font-size: 0.6rem;
+      font-weight: 800;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .app-body {
+      padding: 10px;
+      flex: 1;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .app-banner {
+      background: linear-gradient(135deg, var(--flutter-blue), var(--flutter-cyan));
+      border-radius: 12px;
+      padding: 10px;
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+    }
+    .app-product-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .product-mini-card {
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 10px;
+      padding: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+    .product-thumb {
+      width: 100%;
+      height: 45px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .product-name { font-size: 0.65rem; font-weight: 600; color: #fff; text-align: center; }
+    .product-price { font-size: 0.6rem; color: var(--flutter-cyan); font-weight: 700; }
+
+    .app-bottom-nav {
+      height: 45px;
+      background: rgba(15, 23, 42, 0.95);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 0 10px;
+    }
+    .nav-item-icon {
+      color: var(--text-dim);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 0.6rem;
+    }
+    .nav-item-icon.active { color: var(--flutter-cyan); }
+
+    /* Floating SVG Dash Bird & Chips */
+    .flutter-dash {
+      position: absolute;
+      top: -35px;
+      right: -20px;
+      width: 75px;
+      height: 75px;
+      z-index: 5;
+      animation: dash-bounce 4s ease-in-out infinite;
+    }
+    @keyframes dash-bounce {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-12px) rotate(8deg); }
+    }
+
+    .floating-chip {
+      position: absolute;
+      background: var(--bg-surface-elevated);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-subtle);
+      padding: 0.4rem 0.9rem;
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--flutter-cyan);
+      box-shadow: 0 10px 20px var(--shadow-color);
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      animation: float-chip 5s ease-in-out infinite alternate;
+    }
+    .chip-1 { top: 15%; left: -30px; animation-delay: 0s; }
+    .chip-2 { bottom: 25%; left: -40px; animation-delay: 1.2s; }
+    .chip-3 { top: 35%; right: -35px; animation-delay: 2.4s; }
+    .chip-4 { bottom: 15%; right: -25px; animation-delay: 3.6s; }
+
+    @keyframes float-chip {
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(-10px); }
+    }
+
+    /* ==========================================================================
+       4. STATS STRIP
+       ========================================================================== */
+    .stats-section {
+      padding: 3rem 0;
+      position: relative;
+      z-index: 2;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 1.5rem;
+    }
+    .stat-card {
+      background: var(--bg-glass-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      text-align: center;
+      transition: transform var(--transition-fast), border-color var(--transition-fast);
+    }
+    .stat-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--flutter-cyan);
+    }
+    .stat-number {
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--flutter-cyan);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    .stat-label {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+
+    /* ==========================================================================
+       5. ABOUT SECTION
+       ========================================================================== */
+    .about-section {
+      padding: 6rem 0;
+      position: relative;
+      z-index: 2;
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    .about-text {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text-muted);
+    }
+    .about-text p {
+      margin-bottom: 1.25rem;
+    }
+    .currently-card {
+      background: linear-gradient(135deg, rgba(2, 86, 155, 0.2), rgba(19, 185, 253, 0.1));
+      border: 1px solid rgba(19, 185, 253, 0.3);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .currently-icon {
+      width: 42px;
+      height: 42px;
+      background: var(--flutter-blue);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .best-cards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+    .mini-feature-card {
+      background: var(--bg-glass-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      transition: all var(--transition-fast);
+    }
+    .mini-feature-card:hover {
+      border-color: var(--flutter-cyan);
+      transform: translateY(-3px);
+    }
+    .mini-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: rgba(19, 185, 253, 0.15);
+      color: var(--flutter-cyan);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.75rem;
+    }
+    .mini-title {
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.3rem;
+    }
+    .mini-desc {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+    }
+
+    /* ==========================================================================
+       6. FLUTTER EXPERTISE (SKILLS)
+       ========================================================================== */
+    .skills-section {
+      padding: 6rem 0;
+      position: relative;
+      z-index: 2;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+    .skill-card {
+      background: var(--bg-glass-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      transition: border-color var(--transition-fast), transform var(--transition-fast);
+    }
+    .skill-card:hover {
+      border-color: var(--border-glow);
+      transform: translateY(-3px);
+    }
+    .skill-header {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1rem;
+    }
+    .skill-cat-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, rgba(2, 86, 155, 0.3), rgba(19, 185, 253, 0.2));
+      color: var(--flutter-cyan);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .skill-cat-title {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .skill-tag {
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-subtle);
+      padding: 0.35rem 0.7rem;
+      border-radius: 6px;
+      font-size: 0.825rem;
+      color: var(--text-muted);
+      transition: all var(--transition-fast);
+    }
+    .skill-tag:hover {
+      color: var(--text-main);
+      border-color: var(--flutter-cyan);
+      background: rgba(19, 185, 253, 0.1);
+    }
+
+    .learning-row {
+      margin-top: 3rem;
+      background: var(--bg-surface);
+      border: 1px dashed var(--border-glow);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1.75rem;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .learning-label {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--flutter-cyan);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* ==========================================================================
+       7. FLUTTER APP ARCHITECTURE (VISUAL DIAGRAM)
+       ========================================================================== */
+    .arch-section {
+      padding: 6rem 0;
+      position: relative;
+      z-index: 2;
+    }
+    .arch-card {
+      background: var(--bg-glass-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+    }
+    .arch-diagram {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 950px;
+      margin: 2rem auto 1.5rem auto;
+      position: relative;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    .arch-node {
+      flex: 1;
+      min-width: 170px;
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1rem;
+      text-align: center;
+      transition: all var(--transition-normal);
+      cursor: pointer;
+      position: relative;
+      z-index: 2;
+    }
+    .arch-node:hover {
+      border-color: var(--flutter-cyan);
+      box-shadow: 0 0 25px rgba(19, 185, 253, 0.25);
+      transform: translateY(-4px);
+    }
+    .arch-node-icon {
+      width: 44px;
+      height: 44px;
+      margin: 0 auto 0.75rem auto;
+      border-radius: 12px;
+      background: rgba(19, 185, 253, 0.15);
+      color: var(--flutter-cyan);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .arch-node-title {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 0.25rem;
+    }
+    .arch-node-sub {
+      font-size: 0.75rem;
+      color: var(--text-dim);
+    }
+
+    .arch-connector-line {
+      flex: 0 0 40px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--flutter-blue), var(--flutter-cyan));
+      position: relative;
+    }
+    .arch-connector-line::after {
+      content: '';
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent-neon);
+      top: -3px;
+      left: 0;
+      animation: pulse-line 2s infinite linear;
+    }
+    @keyframes pulse-line {
+      0% { left: 0%; opacity: 1; }
+      100% { left: 100%; opacity: 0; }
+    }
+
+    /* ==========================================================================
+       8. CODE SHOWCASE
+       ========================================================================== */
+    .code-section {
+      padding: 6rem 0;
+      position: relative;
+      z-index: 2;
+    }
+    .code-editor-window {
+      background: var(--code-bg);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
+    .code-header {
+      background: rgba(255, 255, 255, 0.03);
+      padding: 0.6rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .window-dots {
+      display: flex;
+      gap: 6px;
+    }
+    .dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+    }
+    .dot-red { background: #FF5F56; }
+    .dot-yellow { background: #FFBD2E; }
+    .dot-green { background: #27C93F; }
+
+    .code-tabs {
+      display: flex;
+      gap: 2px;
+    }
+    .code-tab {
+      padding: 0.4rem 1rem;
+      font-family: var(--font-code);
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+      transition: all var(--transition-fast);
+    }
+    .code-tab.active {
+      color: var(--flutter-cyan);
+      background: rgba(255, 255, 255, 0.06);
+      font-weight: 600;
+    }
+
+    .copy-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: none;
+      color: var(--text-muted);
+      padding: 0.3rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      transition: all var(--transition-fast);
+    }
+    .copy-btn:hover {
+      background: var(--flutter-cyan);
+      color: #000;
+    }
+
+    .code-content {
+      padding: 1.5rem;
+      overflow-x: auto;
+      font-family: var(--font-code);
+      font-size: 0.875rem;
+      line-height: 1.6;
+      color: #E2E8F0;
+    }
+    .code-block { display: none; }
+    .code-block.active { display: block; }
+
+    /* Syntax Highlighting */
+    .kw { color: #C678DD; font-weight: 600; }
+    .cls { color: #61AFEF; font-weight: 600; }
+    .str { color: #98C379; }
+    .cmt { color: #5C6370; font-style: italic; }
+    .fn { color: #E5C07B; }
+    .var { color: #E06C75; }
+
+    /* ==========================================================================
+       9. SERVICES
+       ========================================================================== */
+    .services-section {
+      padding: 6rem 0;
+      position: relative;
+      z-index: 2;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .service-card {
+      background: var(--bg-glass-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
+      transition: all var(--transition-normal);
+    }
+    .service-card:hover {
+      border-color: var(--flutter-cyan);
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(19, 185, 253, 0.15);
+    }
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(2, 86, 155, 0.3), rgba(19, 185, 253, 0.2));
+      color: var(--flutter-cyan);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+    .service-title {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .service-desc {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    /* ==========================================================================
+       10. PERFORMANCE AND QUALITY
+       ========================================================================== */
+    .perf-section {
+      padding: 6rem 0;
+      position: relative;
+      z-index: 2;
+    }
+    .perf-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .perf-card {
+      background: var(--bg-glass-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .perf-badge {
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--flutter-cyan);
+      margin-bottom: 0.5rem;
+    }
+    .perf-title {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+    .perf-desc {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+    }
+
+    .devtools-banner {
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(2, 86, 155, 0.25));
+      border: 1px solid var(--border-glow);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1.75rem;
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    /* ==========================================================================
+       11. EXPERIENCE (TIMELINE)
+       ========================================================================== */
+    .exp-section {
+      padding: 6rem 0;
+      position: relative;
+      z-index: 2;
+    }
+    .timeline {
+      position: relative;
+      max-width: 850px;
+      margin: 0 auto;
+      padding-left: 2rem;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--flutter-blue), var(--flutter-cyan), transparent);
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 3rem;
+    }
+    .timeline-dot {
+      position: absolute;
+      left: -2rem;
+      top: 0.25rem;
+      transform: translateX(-50%);
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--flutter-cyan);
+      box-shadow: 0 0 12px var(--flutter-cyan);
+      border: 3px solid var(--bg-base);
+    }
+    .timeline-card {
+      background: var(--bg-glass-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
+    }
+    .timeline-role {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+    .timeline-company {
+      color: var(--flutter-cyan);
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 0.25rem;
+    }
+    .timeline-period {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      margin-bottom: 1rem;
+    }
+    .timeline-list {
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .timeline-list li {
+      position: relative;
+      padding-left: 1.25rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+    .timeline-list li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: var(--flutter-cyan);
+    }
+
+    /* ==========================================================================
+       12. PROJECTS (CLEAN CARDS WITHOUT THUMBNAIL CONTAINER)
+       ========================================================================== */
+    .projects-section {
+      padding: 6rem 0;
+      position: relative;
+      z-index: 2;
+    }
+    .project-filters {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      padding: 0.5rem 1.25rem;
+      border-radius: var(--radius-full);
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--flutter-cyan);
+      color: #000;
+      border-color: var(--flutter-cyan);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+    .project-card {
+      background: var(--bg-glass-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all var(--transition-normal);
+      padding: 0;
+    }
+    .project-card:hover {
+      border-color: var(--flutter-cyan);
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .project-content {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .project-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.75rem;
+    }
+    .project-title {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 800;
+    }
+    .role-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.25rem 0.7rem;
+      border-radius: var(--radius-full);
+      background: rgba(19, 185, 253, 0.15);
+      color: var(--flutter-cyan);
+      border: 1px solid rgba(19, 185, 253, 0.3);
+    }
+    .project-period {
+      font-size: 0.825rem;
+      color: var(--flutter-cyan);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .project-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      flex: 1;
+    }
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .tech-chip {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+    }
+    .project-actions {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: auto;
+    }
+
+    /* ==========================================================================
+       13. HOW I WORK (PROCESS)
+       ========================================================================== */
+    .process-section {
+      padding: 6rem 0;
+      position: relative;
+      z-index: 2;
+    }
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+    .process-card {
+      background: var(--bg-glass-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
+      position: relative;
+    }
+    .process-num {
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: rgba(19, 185, 253, 0.2);
+      line-height: 1;
+      margin-bottom: 0.75rem;
+    }
+    .process-title {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .process-desc {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    /* ==========================================================================
+       14. LEADERSHIP & EDUCATION
+       ========================================================================== */
+    .lead-edu-section {
+      padding: 6rem 0;
+      position: relative;
+      z-index: 2;
+    }
+    .lead-edu-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+    }
+    .edu-item {
+      margin-bottom: 1.25rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .edu-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .edu-degree {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+    .edu-school {
+      color: var(--flutter-cyan);
+      font-size: 0.9rem;
+    }
+    .edu-meta {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+    }
+
+    /* ==========================================================================
+       15. FAQ ACCORDION
+       ========================================================================== */
+    .faq-section {
+      padding: 6rem 0;
+      position: relative;
+      z-index: 2;
+    }
+    .faq-list {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .faq-item {
+      background: var(--bg-glass-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+    .faq-question {
+      width: 100%;
+      padding: 1.25rem 1.5rem;
+      background: transparent;
+      border: none;
+      color: var(--text-main);
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.05rem;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .faq-icon {
+      transition: transform var(--transition-fast);
+      color: var(--flutter-cyan);
+    }
+    .faq-item.active .faq-icon {
+      transform: rotate(180deg);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s cubic-bezier(0, 1, 0, 1), padding 0.35s ease;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      padding: 0 1.5rem;
+    }
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+      padding: 0 1.5rem 1.25rem 1.5rem;
+    }
+
+    /* ==========================================================================
+       16. CONTACT & FOOTER
+       ========================================================================== */
+    .contact-section {
+      padding: 6rem 0 3rem 0;
+      position: relative;
+      z-index: 2;
+    }
+    .cta-banner {
+      background: linear-gradient(135deg, var(--flutter-navy), var(--flutter-blue));
+      border-radius: var(--radius-lg);
+      padding: 3rem 2rem;
+      text-align: center;
+      margin-bottom: 4rem;
+      border: 1px solid var(--border-glow);
+      box-shadow: 0 20px 40px rgba(2, 86, 155, 0.3);
+    }
+    .cta-title {
+      font-family: var(--font-heading);
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 3rem;
+    }
+    .contact-info-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .contact-card {
+      background: var(--bg-glass-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      text-decoration: none;
+      color: var(--text-main);
+      transition: all var(--transition-fast);
+    }
+    .contact-card:hover {
+      border-color: var(--flutter-cyan);
+      transform: translateX(5px);
+    }
+    .contact-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: rgba(19, 185, 253, 0.15);
+      color: var(--flutter-cyan);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-form {
+      background: var(--bg-glass-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .form-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+    .form-input, .form-textarea {
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 0.8rem 1rem;
+      color: var(--text-main);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color var(--transition-fast);
+    }
+    .form-input:focus, .form-textarea:focus {
+      border-color: var(--flutter-cyan);
+      box-shadow: 0 0 10px rgba(19, 185, 253, 0.2);
+    }
+    .form-textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 2rem 0;
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 0.875rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    /* Back To Top Button */
+    #back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all var(--transition-fast);
+    }
+    #back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* ==========================================================================
+       EASTER EGG: FLUTTER WIDGET TREE OVERLAY
+       ========================================================================== */
+    #widget-tree-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(8, 12, 20, 0.92);
+      backdrop-filter: blur(25px);
+      z-index: 9000;
+      display: none;
+      padding: 2rem;
+      overflow-y: auto;
+    }
+    #widget-tree-modal.active {
+      display: block;
+    }
+    .widget-tree-container {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: #0D1117;
+      border: 1px solid var(--flutter-cyan);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      font-family: var(--font-code);
+      color: #38BDF8;
+      box-shadow: 0 0 50px rgba(19, 185, 253, 0.3);
+    }
+    .tree-line {
+      margin-left: 1.5rem;
+      padding: 0.2rem 0;
+      border-left: 1px dashed rgba(255, 255, 255, 0.15);
+      padding-left: 0.75rem;
+    }
+    .tree-widget-name {
+      color: #F472B6;
+      font-weight: 600;
+    }
+    .tree-widget-prop {
+      color: #94A3B8;
+      font-size: 0.85rem;
+    }
+
+    /* ==========================================================================
+       PROJECT DETAIL MODAL
+       ========================================================================== */
+    #project-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(16px);
+      z-index: 8000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+    #project-modal.active {
+      display: flex;
+    }
+    .modal-content {
+      background: var(--bg-base);
+      border: 1px solid var(--border-glow);
+      border-radius: var(--radius-lg);
+      max-width: 700px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 2rem;
+      position: relative;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+    }
+    .modal-close {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-main);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    /* ==========================================================================
+       RESPONSIVE MEDIA QUERIES
+       ========================================================================== */
+    @media (max-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero-content {
+        align-items: center;
+      }
+      .hero-bio {
+        max-width: 100%;
+      }
+      .hero-buttons {
+        justify-content: center;
+      }
+      .about-grid, .lead-edu-grid, .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      .mobile-toggle {
+        display: flex;
+      }
+      .phone-container {
+        width: 230px;
+        height: 460px;
+      }
+      .best-cards-grid {
+        grid-template-columns: 1fr;
+      }
+      .arch-diagram {
+        flex-direction: column;
+      }
+      .arch-connector-line {
+        width: 2px;
+        height: 30px;
+        flex: 0 0 30px;
+      }
+      .arch-connector-line::after {
+        top: 0;
+        left: -3px;
+        animation: pulse-line-v 2s infinite linear;
+      }
+      @keyframes pulse-line-v {
+        0% { top: 0%; opacity: 1; }
+        100% { top: 100%; opacity: 0; }
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Ambient Effects -->
+  <div class="bg-grid"></div>
+  <div class="glow-orb glow-1"></div>
+  <div class="glow-orb glow-2"></div>
+  <div id="cursor-glow"></div>
+
+  <!-- Scroll Progress Indicator -->
+  <div id="scroll-progress"></div>
+
+  <!-- 1. SPLASH / LOADING SCREEN (WITH GEOMETRIC LETTER 'A' LOGO) -->
+  <div id="loader">
+    <div class="flutter-loader-logo">
+      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="100" height="100" rx="24" fill="#080C14"/>
+        <rect width="96" height="96" x="2" y="2" rx="22" stroke="url(#loader-grad)" stroke-width="3" fill="none"/>
+        <path d="M50 18L22 82H37L50 50Z" fill="#13B9FD"/>
+        <path d="M50 18L78 82H63L50 50Z" fill="#02569B"/>
+        <path d="M36 58H64L57 44H43Z" fill="#00E5FF"/>
+        <defs>
+          <linearGradient id="loader-grad" x1="0" y1="0" x2="100" y2="100">
+            <stop offset="0%" stop-color="#02569B"/>
+            <stop offset="100%" stop-color="#13B9FD"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+    <div class="loader-progress">
+      <div class="loader-bar"></div>
+    </div>
+    <div class="loader-text">Initializing Experience...</div>
+  </div>
+
+  <!-- 2. HEADER / NAVIGATION -->
+  <header id="header">
+    <div class="container nav-container">
+      <a href="#hero" class="brand-logo">
+        <div class="brand-icon">
+          <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" width="22" height="22">
+            <path d="M50 18L22 82H37L50 50Z" fill="#13B9FD"/>
+            <path d="M50 18L78 82H63L50 50Z" fill="#02569B"/>
+            <path d="M36 58H64L57 44H43Z" fill="#00E5FF"/>
+          </svg>
+        </div>
+        <span>Arun<span style="color: var(--flutter-cyan);">.dev</span></span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#hero" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#expertise" class="nav-link">Skills</a></li>
+        <li><a href="#architecture" class="nav-link">Architecture</a></li>
+        <li><a href="#code" class="nav-link">Code</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Widget Tree Easter Egg Button -->
+        <button class="icon-btn" id="widget-tree-btn" title="Inspect Flutter Widget Tree Overlay">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2v8m0 0l-4-4m4 4l4-4M4 14h16M4 20h16"/>
+          </svg>
+        </button>
+        <!-- Theme Toggle -->
+        <button class="icon-btn" id="theme-btn" title="Toggle Light/Dark Theme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M17.07 6.93l1.42-1.42"/>
+          </svg>
+        </button>
+        <!-- Mobile Drawer Hamburger -->
+        <button class="icon-btn mobile-toggle" id="mobile-menu-btn" aria-label="Open menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Overlay -->
+  <div class="mobile-drawer" id="mobile-drawer">
+    <a href="#hero" class="mobile-link">Home</a>
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#expertise" class="mobile-link">Skills</a>
+    <a href="#architecture" class="mobile-link">Architecture</a>
+    <a href="#code" class="mobile-link">Code</a>
+    <a href="#projects" class="mobile-link">Projects</a>
+    <a href="#experience" class="mobile-link">Experience</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+  </div>
+
+  <main>
+    <!-- ==========================================================================
+       1. HERO SECTION
+       ========================================================================== -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-badges">
+            <span class="chip-badge">Dart 3.x</span>
+            <span class="chip-badge">Flutter 3.x</span>
+            <span class="chip-badge">Android + iOS</span>
+            <span class="chip-badge status-work"><span class="status-dot"></span> Available for work</span>
+          </div>
+
+          <h1 class="hero-title">
+            Hi, I'm Arun Pushpan. <br>
+            I build <span class="gradient-text">Flutter apps</span> people love.
+          </h1>
+
+          <div class="hero-typing-wrapper">
+            <span id="typed-text"></span><span class="typed-cursor"></span>
+          </div>
+
+          <p class="hero-bio">
+            Flutter Developer with 3+ years of experience engineering high-performance Android & iOS mobile solutions. Team Lead on scalable e-commerce platforms serving 10,000+ users.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">
+              View Projects
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </a>
+            <a href="#contact" class="btn btn-secondary" id="cv-download-btn">
+              Download CV
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- 3D Phone Mockup Visual -->
+        <div class="hero-visual">
+          <!-- Background Phone -->
+          <div class="phone-secondary"></div>
+
+          <!-- Main Floating Phone -->
+          <div class="phone-container">
+            <div class="phone-screen">
+              <div class="phone-notch"></div>
+              
+              <!-- App Bar -->
+              <div class="app-bar">
+                <span class="app-title">BuyIt Store</span>
+                <div class="app-cart-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                  </svg>
+                  <span class="cart-badge">3</span>
+                </div>
+              </div>
+
+              <!-- App Body -->
+              <div class="app-body">
+                <div class="app-banner">
+                  ⚡ Flutter 60 FPS Smooth UI
+                </div>
+                <div class="app-product-grid">
+                  <div class="product-mini-card">
+                    <div class="product-thumb">📱</div>
+                    <span class="product-name">Smart Watch</span>
+                    <span class="product-price">$129</span>
+                  </div>
+                  <div class="product-mini-card">
+                    <div class="product-thumb">🎧</div>
+                    <span class="product-name">Earbuds Pro</span>
+                    <span class="product-price">$49</span>
+                  </div>
+                  <div class="product-mini-card">
+                    <div class="product-thumb">🐦</div>
+                    <span class="product-name">Dash Toy</span>
+                    <span class="product-price">$19</span>
+                  </div>
+                  <div class="product-mini-card">
+                    <div class="product-thumb">⚡</div>
+                    <span class="product-name">Fast Charger</span>
+                    <span class="product-price">$29</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Bottom Nav -->
+              <div class="app-bottom-nav">
+                <div class="nav-item-icon active">🏠<span>Home</span></div>
+                <div class="nav-item-icon">🛍️<span>Shop</span></div>
+                <div class="nav-item-icon">🛒<span>Cart</span></div>
+                <div class="nav-item-icon">👤<span>Profile</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SVG Floating Flutter Dash Bird -->
+          <div class="flutter-dash">
+            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M30 20L75 65L45 95L15 65L30 20Z" fill="#13B9FD" opacity="0.9"/>
+              <path d="M55 20L90 55L65 80L30 45L55 20Z" fill="#02569B"/>
+              <circle cx="65" cy="40" r="4" fill="#FFFFFF"/>
+            </svg>
+          </div>
+
+          <!-- Floating Micro Chips -->
+          <div class="floating-chip chip-1">⚡ Bloc</div>
+          <div class="floating-chip chip-2">🔥 Firebase</div>
+          <div class="floating-chip chip-3">🌐 REST API</div>
+          <div class="floating-chip chip-4">🚀 60 FPS</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       2. STATS STRIP
+       ========================================================================== -->
+    <section class="stats-section reveal">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number" data-target="3">0+</div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-target="8">0+</div>
+            <div class="stat-label">Apps Delivered</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-target="10000">0+</div>
+            <div class="stat-label">Active Users</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-target="30">0%</div>
+            <div class="stat-label">Faster Development</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-target="2">0</div>
+            <div class="stat-label">Stores (Play & App Store)</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       3. ABOUT SECTION
+       ========================================================================== -->
+    <section id="about" class="about-section reveal">
+      <div class="container">
+        <span class="section-tag">About Me</span>
+        <h2 class="section-title">Crafting seamless mobile experiences across platforms</h2>
+        
+        <div class="about-grid">
+          <div class="about-text">
+            <p>
+              I am a <strong>Flutter Developer with 3+ years of experience</strong> building cross-platform Android and iOS applications. Over my career, I've delivered 8+ scalable apps serving 10,000+ users while reducing development time by 30% through modular component architectures.
+            </p>
+            <p>
+              My expertise spans REST API integrations, the Firebase ecosystem, state management with Bloc and GetX, and crafting silky-smooth pixel-perfect UI/UX.
+            </p>
+            
+            <div class="currently-card">
+              <div class="currently-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+              </div>
+              <div>
+                <div style="font-size: 0.8rem; color: var(--flutter-cyan); font-weight: 700;">CURRENTLY</div>
+                <div style="font-weight: 700; color: var(--text-main);">Team Lead at Clan LEO</div>
+                <div style="font-size: 0.85rem; color: var(--text-dim);">Spearheading the BuyIt platform development</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="best-cards-grid">
+            <div class="mini-feature-card">
+              <div class="mini-icon">📱</div>
+              <div class="mini-title">Single Codebase</div>
+              <div class="mini-desc">High quality native iOS and Android apps compiled from a unified Dart code structure.</div>
+            </div>
+            <div class="mini-feature-card">
+              <div class="mini-icon">🧩</div>
+              <div class="mini-title">Reusable Component Architecture</div>
+              <div class="mini-desc">Modular widget libraries cutting engineering effort by 30% without sacrificing custom design.</div>
+            </div>
+            <div class="mini-feature-card">
+              <div class="mini-icon">⚡</div>
+              <div class="mini-title">Real-Time Features</div>
+              <div class="mini-desc">In-app messaging, WebSockets, and real-time database synchronization with Firebase.</div>
+            </div>
+            <div class="mini-feature-card">
+              <div class="mini-icon">🚀</div>
+              <div class="mini-title">Store-Ready Deployment</div>
+              <div class="mini-desc">Complete lifecycle management from signing & release builds to Google Play & App Store publishing.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       4. FLUTTER EXPERTISE (SKILLS)
+       ========================================================================== -->
+    <section id="expertise" class="skills-section reveal">
+      <div class="container">
+        <span class="section-tag">Flutter Expertise</span>
+        <h2 class="section-title">Comprehensive Technical Stack</h2>
+        <p class="section-subtitle">Deep proficiency across the complete Flutter ecosystem & mobile backend architectures.</p>
+
+        <div class="skills-grid">
+          <!-- Core -->
+          <div class="skill-card">
+            <div class="skill-header">
+              <div class="skill-cat-icon">🎯</div>
+              <div class="skill-cat-title">Core & Fundamentals</div>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Dart</span>
+              <span class="skill-tag">Flutter 3.x</span>
+              <span class="skill-tag">Object-Oriented Programming (OOP)</span>
+              <span class="skill-tag">Cross-Platform Dev</span>
+              <span class="skill-tag">Null Safety</span>
+              <span class="skill-tag">Async Programming (Future/Stream)</span>
+            </div>
+          </div>
+
+          <!-- UI & Widgets -->
+          <div class="skill-card">
+            <div class="skill-header">
+              <div class="skill-cat-icon">🎨</div>
+              <div class="skill-cat-title">UI & Widgets</div>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Custom Widgets</span>
+              <span class="skill-tag">Stateless / Stateful</span>
+              <span class="skill-tag">Material 3 & Cupertino</span>
+              <span class="skill-tag">LayoutBuilder & MediaQuery</span>
+              <span class="skill-tag">Reusable Component Library</span>
+              <span class="skill-tag">Light / Dark Theming</span>
+              <span class="skill-tag">Form Validation</span>
+            </div>
+          </div>
+
+          <!-- State Management -->
+          <div class="skill-card">
+            <div class="skill-header">
+              <div class="skill-cat-icon">⚙️</div>
+              <div class="skill-cat-title">State Management & Architecture</div>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Bloc / HydratedBloc</span>
+              <span class="skill-tag">GetX</span>
+              <span class="skill-tag">Clean Architecture</span>
+              <span class="skill-tag">MVVM Pattern</span>
+              <span class="skill-tag">Repository Pattern</span>
+              <span class="skill-tag">Dependency Injection</span>
+            </div>
+          </div>
+
+          <!-- Backend & APIs -->
+          <div class="skill-card">
+            <div class="skill-header">
+              <div class="skill-cat-icon">🌐</div>
+              <div class="skill-cat-title">Backend & APIs</div>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">REST APIs (Dio/Http)</span>
+              <span class="skill-tag">Firebase Authentication</span>
+              <span class="skill-tag">Cloud Firestore</span>
+              <span class="skill-tag">Cloud Functions</span>
+              <span class="skill-tag">WebSockets</span>
+              <span class="skill-tag">Node.js & PostgreSQL</span>
+            </div>
+          </div>
+
+          <!-- Storage & Database -->
+          <div class="skill-card">
+            <div class="skill-header">
+              <div class="skill-cat-icon">💾</div>
+              <div class="skill-cat-title">Databases & Local Storage</div>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Firebase Realtime DB</span>
+              <span class="skill-tag">Hive / Isar</span>
+              <span class="skill-tag">SharedPreferences</span>
+              <span class="skill-tag">SQLite / Floor</span>
+            </div>
+          </div>
+
+          <!-- Real-Time & Tools -->
+          <div class="skill-card">
+            <div class="skill-header">
+              <div class="skill-cat-icon">🛠️</div>
+              <div class="skill-cat-title">Tools & Deployment</div>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Git & GitHub</span>
+              <span class="skill-tag">Android Studio</span>
+              <span class="skill-tag">Xcode</span>
+              <span class="skill-tag">VS Code</span>
+              <span class="skill-tag">Postman</span>
+              <span class="skill-tag">Flutter DevTools</span>
+              <span class="skill-tag">Google Play Console</span>
+              <span class="skill-tag">Apple App Store Connect</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exploring Chip Row -->
+        <div class="learning-row">
+          <div class="learning-label">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+            </svg>
+            Exploring & Continuously Learning:
+          </div>
+          <span class="chip-badge">Unit & Widget Testing</span>
+          <span class="chip-badge">CI/CD Pipelines</span>
+          <span class="chip-badge">Riverpod</span>
+          <span class="chip-badge">Flutter Web</span>
+          <span class="chip-badge">Advanced Canvas Animations</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       7. FLUTTER APP ARCHITECTURE (VISUAL DIAGRAM)
+       ========================================================================== -->
+    <section id="architecture" class="arch-section reveal">
+      <div class="container">
+        <span class="section-tag">Architecture</span>
+        <h2 class="section-title">Layered Flutter Application Design</h2>
+        <p class="section-subtitle">Structured for maximum testability, maintainability, and reusability.</p>
+
+        <div class="arch-card glass-card">
+          <div class="arch-diagram">
+            <!-- Node 1 -->
+            <div class="arch-node">
+              <div class="arch-node-icon">📱</div>
+              <div class="arch-node-title">UI Layer</div>
+              <div class="arch-node-sub">Stateless/Stateful Widgets & Screens</div>
+            </div>
+
+            <div class="arch-connector-line"></div>
+
+            <!-- Node 2 -->
+            <div class="arch-node">
+              <div class="arch-node-icon">⚡</div>
+              <div class="arch-node-title">State Management</div>
+              <div class="arch-node-sub">Bloc Events & GetX Controllers</div>
+            </div>
+
+            <div class="arch-connector-line"></div>
+
+            <!-- Node 3 -->
+            <div class="arch-node">
+              <div class="arch-node-icon">🔄</div>
+              <div class="arch-node-title">Repository Layer</div>
+              <div class="arch-node-sub">Business Logic & Data Abstraction</div>
+            </div>
+
+            <div class="arch-connector-line"></div>
+
+            <!-- Node 4 -->
+            <div class="arch-node">
+              <div class="arch-node-icon">🌐</div>
+              <div class="arch-node-title">Data Sources</div>
+              <div class="arch-node-sub">REST APIs, Firebase, Local DB</div>
+            </div>
+          </div>
+
+          <p style="color: var(--flutter-cyan); font-weight: 600; margin-top: 1rem;">
+            "Clean, layered, reusable. This is how I cut development time by 30%."
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       8. CODE SHOWCASE
+       ========================================================================== -->
+    <section id="code" class="code-section reveal">
+      <div class="container">
+        <span class="section-tag">Code Showcase</span>
+        <h2 class="section-title">Clean, Idiomatic Dart Code</h2>
+        <p class="section-subtitle">A quick peek into my state management and reusable component patterns.</p>
+
+        <div class="code-editor-window">
+          <div class="code-header">
+            <div class="window-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            
+            <div class="code-tabs">
+              <button class="code-tab active" data-tab="tab-bloc">counter_bloc.dart</button>
+              <button class="code-tab" data-tab="tab-btn">custom_button.dart</button>
+            </div>
+
+            <button class="copy-btn" id="copy-code-btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+              </svg>
+              <span>Copy</span>
+            </button>
+          </div>
+
+          <div class="code-content">
+            <!-- Code Tab 1: Bloc -->
+            <pre class="code-block active" id="tab-bloc"><code><span class="cmt">// counter_bloc.dart - Clean Bloc Implementation</span>
+<span class="kw">import</span> <span class="str">'package:flutter_bloc/flutter_bloc.dart'</span>;
+
+<span class="cmt">// 1. Events</span>
+<span class="kw">abstract class</span> <span class="cls">CounterEvent</span> {}
+<span class="kw">class</span> <span class="cls">IncrementCounter</span> <span class="kw">extends</span> <span class="cls">CounterEvent</span> {}
+
+<span class="cmt">// 2. State</span>
+<span class="kw">class</span> <span class="cls">CounterState</span> {
+  <span class="kw">final int</span> <span class="var">count</span>;
+  <span class="kw">final bool</span> <span class="var">isLoading</span>;
+  <span class="cls">CounterState</span>({<span class="kw">required this</span>.<span class="var">count</span>, <span class="kw">this</span>.<span class="var">isLoading</span> = <span class="kw">false</span>});
+}
+
+<span class="cmt">// 3. Bloc Class</span>
+<span class="kw">class</span> <span class="cls">CounterBloc</span> <span class="kw">extends</span> <span class="cls">Bloc</span>&lt;<span class="cls">CounterEvent</span>, <span class="cls">CounterState</span>&gt; {
+  <span class="cls">CounterBloc</span>() : <span class="kw">super</span>(<span class="cls">CounterState</span>(count: <span class="var">0</span>)) {
+    <span class="fn">on</span>&lt;<span class="cls">IncrementCounter</span>&gt;((event, emit) {
+      <span class="fn">emit</span>(<span class="cls">CounterState</span>(count: state.count + <span class="var">1</span>));
+    });
+  }
+}</code></pre>
+
+            <!-- Code Tab 2: Custom Button -->
+            <pre class="code-block" id="tab-btn"><code><span class="cmt">// custom_button.dart - Reusable Flutter Button</span>
+<span class="kw">import</span> <span class="str">'package:flutter/material.dart'</span>;
+
+<span class="kw">class</span> <span class="cls">CustomFlutterButton</span> <span class="kw">extends</span> <span class="cls">StatelessWidget</span> {
+  <span class="kw">final</span> <span class="cls">String</span> <span class="var">label</span>;
+  <span class="kw">final</span> <span class="cls">VoidCallback</span> <span class="var">onPressed</span>;
+  <span class="kw">final</span> <span class="cls">IconData</span>? <span class="var">icon</span>;
+
+  <span class="kw">const</span> <span class="cls">CustomFlutterButton</span>({
+    <span class="cls">Key</span>? key,
+    <span class="kw">required this</span>.<span class="var">label</span>,
+    <span class="kw">required this</span>.<span class="var">onPressed</span>,
+    <span class="kw">this</span>.<span class="var">icon</span>,
+  }) : <span class="kw">super</span>(key: key);
+
+  @override
+  <span class="cls">Widget</span> <span class="fn">build</span>(<span class="cls">BuildContext</span> context) {
+    <span class="kw">return</span> <span class="cls">ElevatedButton</span>(
+      style: <span class="cls">ElevatedButton</span>.<span class="fn">styleFrom</span>(
+        backgroundColor: <span class="kw">const</span> <span class="cls">Color</span>(<span class="var">0xFF02569B</span>),
+        padding: <span class="kw">const</span> <span class="cls">EdgeInsets</span>.<span class="fn">symmetric</span>(horizontal: <span class="var">24</span>, vertical: <span class="var">14</span>),
+        shape: <span class="cls">RoundedRectangleBorder</span>(borderRadius: <span class="cls">BorderRadius</span>.<span class="fn">circular</span>(<span class="var">30</span>)),
+      ),
+      onPressed: <span class="var">onPressed</span>,
+      child: <span class="cls">Row</span>(
+        mainAxisSize: <span class="cls">MainAxisSize</span>.min,
+        children: [
+          <span class="kw">if</span> (<span class="var">icon</span> != <span class="kw">null</span>) ...[<span class="cls">Icon</span>(<span class="var">icon</span>, size: <span class="var">18</span>), <span class="kw">const</span> <span class="cls">SizedBox</span>(width: <span class="var">8</span>)],
+          <span class="cls">Text</span>(<span class="var">label</span>, style: <span class="kw">const</span> <span class="cls">TextStyle</span>(fontWeight: <span class="cls">FontWeight</span>.bold)),
+        ],
+      ),
+    );
+  }
+}</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       9. SERVICES
+       ========================================================================== -->
+    <section id="services" class="services-section reveal">
+      <div class="container">
+        <span class="section-tag">Services</span>
+        <h2 class="section-title">What I Can Build For You</h2>
+        <p class="section-subtitle">End-to-end mobile development services tailored to business needs.</p>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">📱</div>
+            <h3 class="service-title">Cross-Platform Apps</h3>
+            <p class="service-desc">Native performance Android & iOS mobile applications engineered with Flutter from a single clean codebase.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">🛒</div>
+            <h3 class="service-title">E-Commerce Platforms</h3>
+            <p class="service-desc">Complete mobile shopping systems featuring catalog browsing, cart management, search filtering, & checkout.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">💬</div>
+            <h3 class="service-title">Chat & Messaging Apps</h3>
+            <p class="service-desc">Real-time communication tools using WebSockets and Firebase with push notifications and profile management.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">🖥️</div>
+            <h3 class="service-title">Admin Dashboards & Web</h3>
+            <p class="service-desc">Comprehensive administrative control panels and companion web applications for managing platform operations.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">🔗</div>
+            <h3 class="service-title">REST API & Firebase Sync</h3>
+            <p class="service-desc">Seamless integration of backend services, Firebase Authentication, Cloud Firestore, and custom REST APIs.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">🚀</div>
+            <h3 class="service-title">App Store Deployment</h3>
+            <p class="service-desc">Complete assistance in configuring release builds, app signing, store listings, and submitting to Play Store & App Store.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">⚡</div>
+            <h3 class="service-title">UI Polish & 60fps Profiling</h3>
+            <p class="service-desc">Diagnosing performance bottlenecks, optimizing widget rebuilds, and delivering smooth 60fps animations.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       10. PERFORMANCE AND QUALITY
+       ========================================================================== -->
+    <section class="perf-section reveal">
+      <div class="container">
+        <span class="section-tag">Quality Standards</span>
+        <h2 class="section-title">Performance-First Engineering</h2>
+        
+        <div class="perf-grid">
+          <div class="perf-card">
+            <div class="perf-badge">60 FPS</div>
+            <div class="perf-title">Smooth Motion</div>
+            <div class="perf-desc">Optimized frame rendering to ensure zero frame drops during heavy scrolling and transitions.</div>
+          </div>
+
+          <div class="perf-card">
+            <div class="perf-badge">30%</div>
+            <div class="perf-title">Faster Rebuilds</div>
+            <div class="perf-desc">Granular state management and const widget constructors to avoid unnecessary widget tree repaints.</div>
+          </div>
+
+          <div class="perf-card">
+            <div class="perf-badge">100%</div>
+            <div class="perf-title">Responsive UI</div>
+            <div class="perf-desc">Dynamic layout adaptations using LayoutBuilder and MediaQuery across phones, foldables, and tablets.</div>
+          </div>
+
+          <div class="perf-card">
+            <div class="perf-badge">0-Crash</div>
+            <div class="perf-title">Resilient Architecture</div>
+            <div class="perf-desc">Comprehensive error boundaries, null safety enforcement, and graceful offline fallback states.</div>
+          </div>
+        </div>
+
+        <div class="devtools-banner">
+          <div style="font-size: 1.8rem;">🛠️</div>
+          <div>
+            <div style="font-weight: 700; color: var(--text-main);">Proficient with Flutter DevTools</div>
+            <div style="font-size: 0.85rem; color: var(--text-muted);">Active profiling with CPU Allocation, Repaint Rainbow, and Memory Leak Inspector for peak runtime performance.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       11. EXPERIENCE (TIMELINE)
+       ========================================================================== -->
+    <section id="experience" class="exp-section reveal">
+      <div class="container">
+        <span class="section-tag">Work Experience</span>
+        <h2 class="section-title">Professional Journey</h2>
+        <p class="section-subtitle">Over 3 years of building production apps and leading Flutter engineering teams.</p>
+
+        <div class="timeline">
+          <!-- Role 1 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-role">Flutter Developer & Team Lead</div>
+              <div class="timeline-company">Clan LEO Pvt. Ltd • Kerala, India</div>
+              <div class="timeline-period">Apr 2023 – Present</div>
+              <ul class="timeline-list">
+                <li>Built cross-platform mobile applications with Flutter for iOS and Android.</li>
+                <li>Integrated REST APIs, Firebase, and WebSockets for real-time data synchronization.</li>
+                <li>Implemented Bloc and GetX state management for clean architecture and maintainable codebase.</li>
+                <li>Designed custom UI components following Material Design and Cupertino guidelines.</li>
+                <li>Developed in-app chat, push notifications, authentication flows, and role-based access control.</li>
+                <li>Deployed multiple apps to the Google Play Store and Apple App Store.</li>
+                <li>Collaborated with designers and backend engineers to improve app performance and user experience.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Role 2 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-role">Flutter Intern</div>
+              <div class="timeline-company">Clan LEO Pvt. Ltd • Kerala, India</div>
+              <div class="timeline-period">Jan 2023 – Mar 2023</div>
+              <ul class="timeline-list">
+                <li>Built and tested features for a production Flutter application within an agile team.</li>
+                <li>Fixed front-end bugs and improved UI responsiveness across diverse mobile screens.</li>
+                <li>Utilized Git for version control and actively contributed to daily sprint stand-ups.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Role 3 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-role">Flutter Trainee</div>
+              <div class="timeline-company">Spectrum Softtech Solutions Pvt. Ltd • Kerala, India</div>
+              <div class="timeline-period">Sep 2022 – Dec 2022</div>
+              <ul class="timeline-list">
+                <li>Underwent intensive training in Flutter, Dart, Firebase, API integration, and state management.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       12. PROJECTS (CLEAN CARDS WITHOUT THUMBNAIL CONTAINER)
+       ========================================================================== -->
+    <section id="projects" class="projects-section reveal">
+      <div class="container">
+        <span class="section-tag">Featured Projects</span>
+        <h2 class="section-title">Recent Mobile & Web Apps</h2>
+        <p class="section-subtitle">Real-world applications delivered with clean architecture and smooth motion.</p>
+
+        <!-- Filters -->
+        <div class="project-filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
+          <button class="filter-btn" data-filter="web">Web</button>
+          <button class="filter-btn" data-filter="tools">Tools</button>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1: BuyIt App -->
+          <div class="project-card" data-category="mobile">
+            <div class="project-content">
+              <div class="project-header-row">
+                <h3 class="project-title">BuyIt</h3>
+                <span class="role-badge">Team Lead</span>
+              </div>
+              <div class="project-period">Jan 2025 – Jan 2026 • Shopping Application</div>
+              <p class="project-desc">
+                Full-featured mobile e-commerce platform allowing users to discover products, view details, manage shopping carts, and track orders seamlessly.
+              </p>
+              <div class="project-tech">
+                <span class="tech-chip">Dart</span>
+                <span class="tech-chip">Flutter</span>
+                <span class="tech-chip">Node.js</span>
+                <span class="tech-chip">PostgreSQL</span>
+              </div>
+              <div class="project-actions">
+                <button class="btn btn-secondary open-modal-btn" data-project="buyit-app" style="padding: 0.5rem 1rem; font-size: 0.8rem;">
+                  View Details
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: BuyIt Admin & Web -->
+          <div class="project-card" data-category="web">
+            <div class="project-content">
+              <div class="project-header-row">
+                <h3 class="project-title">BuyIt Admin & Website</h3>
+                <span class="role-badge">Team Lead</span>
+              </div>
+              <div class="project-period">Jan 2026 – Jun 2026 • Admin & Marketing Web</div>
+              <p class="project-desc">
+                Administrative dashboard for managing products, categories, stock, and order updates, paired with a responsive landing website.
+              </p>
+              <div class="project-tech">
+                <span class="tech-chip">Flutter</span>
+                <span class="tech-chip">HTML/CSS/JS</span>
+                <span class="tech-chip">Node.js</span>
+                <span class="tech-chip">PostgreSQL</span>
+              </div>
+              <div class="project-actions">
+                <button class="btn btn-secondary open-modal-btn" data-project="buyit-admin" style="padding: 0.5rem 1rem; font-size: 0.8rem;">
+                  View Details
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: ReachOut -->
+          <div class="project-card" data-category="mobile">
+            <div class="project-content">
+              <div class="project-header-row">
+                <h3 class="project-title">ReachOut</h3>
+                <span class="role-badge" style="background: rgba(124, 77, 255, 0.15); color: var(--accent-purple); border-color: rgba(124, 77, 255, 0.3);">Team Member</span>
+              </div>
+              <div class="project-period">Jun 2023 – Dec 2024 • Communication Platform</div>
+              <p class="project-desc">
+                Mobile communication app featuring user profiles, contact discovery, instant messaging, and real-time activity notifications.
+              </p>
+              <div class="project-tech">
+                <span class="tech-chip">Flutter</span>
+                <span class="tech-chip">Node.js</span>
+                <span class="tech-chip">PostgreSQL</span>
+                <span class="tech-chip">REST API</span>
+              </div>
+              <div class="project-actions">
+                <button class="btn btn-secondary open-modal-btn" data-project="reachout" style="padding: 0.5rem 1rem; font-size: 0.8rem;">
+                  View Details
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4: Rigging Calculator -->
+          <div class="project-card" data-category="tools">
+            <div class="project-content">
+              <div class="project-header-row">
+                <h3 class="project-title">Rigging Calculator</h3>
+                <span class="role-badge" style="background: rgba(0, 230, 118, 0.15); color: var(--accent-emerald); border-color: rgba(0, 230, 118, 0.3);">Team Member</span>
+              </div>
+              <div class="project-period">Jan 2023 – May 2023 • Engineering Tool</div>
+              <p class="project-desc">
+                Engineering calculation utility for preliminary rigging assessments, estimating sling tension and load distribution.
+              </p>
+              <div class="project-tech">
+                <span class="tech-chip">Flutter</span>
+                <span class="tech-chip">Node.js</span>
+                <span class="tech-chip">PostgreSQL</span>
+                <span class="tech-chip">Form Validation</span>
+              </div>
+              <div class="project-actions">
+                <button class="btn btn-secondary open-modal-btn" data-project="rigging" style="padding: 0.5rem 1rem; font-size: 0.8rem;">
+                  View Details
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       13. HOW I WORK (PROCESS)
+       ========================================================================== -->
+    <section class="process-section reveal">
+      <div class="container">
+        <span class="section-tag">Development Workflow</span>
+        <h2 class="section-title">How I Build Apps</h2>
+
+        <div class="process-grid">
+          <div class="process-card">
+            <div class="process-num">01</div>
+            <h3 class="process-title">Understand & Plan</h3>
+            <p class="process-desc">Gathering business requirements, user stories, defining state strategy, and planning architecture.</p>
+          </div>
+
+          <div class="process-card">
+            <div class="process-num">02</div>
+            <h3 class="process-title">Design UI & Architecture</h3>
+            <p class="process-desc">Crafting responsive component hierarchy following Material 3 / Cupertino design guidelines.</p>
+          </div>
+
+          <div class="process-card">
+            <div class="process-num">03</div>
+            <h3 class="process-title">Build & Integrate</h3>
+            <p class="process-desc">Modular widget construction, API / Firebase data binding, state management, and real-time syncing.</p>
+          </div>
+
+          <div class="process-card">
+            <div class="process-num">04</div>
+            <h3 class="process-title">Test, Release & Support</h3>
+            <p class="process-desc">Flutter DevTools profiling, fixing edge cases, signing release builds, and submitting to App Stores.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       14. LEADERSHIP & EDUCATION
+       ========================================================================== -->
+    <section class="lead-edu-section reveal">
+      <div class="container">
+        <div class="lead-edu-grid">
+          <!-- Leadership Block -->
+          <div class="glass-card">
+            <span class="section-tag" style="margin-bottom: 0.5rem;">Leadership</span>
+            <h3 class="section-title" style="font-size: 1.5rem;">Team Leadership at Clan LEO</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem;">
+              As <strong>Team Lead on the BuyIt platform</strong>, I coordinated cross-functional development tasks, tracked project milestones, conducted peer code reviews, and managed seamless frontend-backend integration, testing, and release preparation.
+            </p>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+              <span class="chip-badge">Sprint Planning</span>
+              <span class="chip-badge">Code Reviews</span>
+              <span class="chip-badge">Release Management</span>
+            </div>
+          </div>
+
+          <!-- Education Block -->
+          <div class="glass-card">
+            <span class="section-tag" style="margin-bottom: 0.5rem;">Education</span>
+            <h3 class="section-title" style="font-size: 1.5rem;">Academic Background</h3>
+            
+            <div class="edu-item">
+              <div class="edu-degree">Bachelor of Computer Applications (BCA)</div>
+              <div class="edu-school">Indira Gandhi National Open University</div>
+              <div class="edu-meta">Apr 2023 – Present</div>
+            </div>
+
+            <div class="edu-item">
+              <div class="edu-degree">Diploma in Computer Science & Engineering</div>
+              <div class="edu-school">MVGM Govt. Polytechnic College</div>
+              <div class="edu-meta">Jun 2019 – Aug 2022 • <strong>CGPA: 8.6</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       15. FAQ ACCORDION
+       ========================================================================== -->
+    <section class="faq-section reveal">
+      <div class="container">
+        <span class="section-tag">FAQ</span>
+        <h2 class="section-title" style="text-align: center;">Frequently Asked Questions</h2>
+        
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question">
+              Do you build both Android and iOS apps?
+              <span class="faq-icon">▼</span>
+            </button>
+            <div class="faq-answer">
+              Yes! Flutter compiles directly to native ARM code for both Android and iOS. I write unified Dart code that delivers 60fps native performance on both platforms.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              Do you work with Firebase and custom backends?
+              <span class="faq-icon">▼</span>
+            </button>
+            <div class="faq-answer">
+              Absolutely. I have extensive experience integrating Firebase (Auth, Firestore, Cloud Functions, Realtime DB) as well as connecting custom REST APIs and WebSockets powered by Node.js, PostgreSQL, and other backends.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              Can you publish the app to Google Play Store and Apple App Store?
+              <span class="faq-icon">▼</span>
+            </button>
+            <div class="faq-answer">
+              Yes, I manage the end-to-end release lifecycle: configuring signing keys, building APKs/AABs/IPAs, preparing store listings, assets, and navigating submission guidelines.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              Do you work on existing Flutter codebases?
+              <span class="faq-icon">▼</span>
+            </button>
+            <div class="faq-answer">
+              Yes, I am skilled at joining existing projects, refactoring state management to Bloc or GetX, optimizing rebuild performance, and adding new features seamlessly.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       16. CONTACT & FOOTER
+       ========================================================================== -->
+    <section id="contact" class="contact-section reveal">
+      <div class="container">
+        <div class="cta-banner">
+          <h2 class="cta-title">Let's build your next Flutter app together!</h2>
+          <p style="color: rgba(255, 255, 255, 0.8); max-width: 600px; margin: 0 auto 1.5rem auto;">
+            Whether you have a new mobile app concept or an existing Flutter project that needs expert leadership, I'm ready to help.
+          </p>
+          <a href="mailto:arunpushpan2018@gmail.com" class="btn btn-primary" style="background: #FFF; color: #02569B; font-weight: 800;">
+            Start a Conversation 🚀
+          </a>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Info Cards -->
+          <div class="contact-info-cards">
+            <a href="mailto:arunpushpan2018@gmail.com" class="contact-card">
+              <div class="contact-icon">📧</div>
+              <div>
+                <div style="font-size: 0.8rem; color: var(--text-dim);">Email</div>
+                <div style="font-weight: 600;">arunpushpan2018@gmail.com</div>
+              </div>
+            </a>
+
+            <a href="tel:+919847865571" class="contact-card">
+              <div class="contact-icon">📞</div>
+              <div>
+                <div style="font-size: 0.8rem; color: var(--text-dim);">Phone</div>
+                <div style="font-weight: 600;">+91 98478 65571</div>
+              </div>
+            </a>
+
+            <a href="https://linkedin.com/in/arun-pushpan-54a287249" target="_blank" class="contact-card">
+              <div class="contact-icon">💼</div>
+              <div>
+                <div style="font-size: 0.8rem; color: var(--text-dim);">LinkedIn</div>
+                <div style="font-weight: 600;">linkedin.com/in/arun-pushpan-54a287249</div>
+              </div>
+            </a>
+
+            <a href="https://github.com/Arun-pushpan" target="_blank" class="contact-card">
+              <div class="contact-icon">💻</div>
+              <div>
+                <div style="font-size: 0.8rem; color: var(--text-dim);">GitHub</div>
+                <div style="font-weight: 600;">github.com/Arun-pushpan</div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Contact Form -->
+          <form class="contact-form" id="contact-form">
+            <div class="form-group">
+              <label class="form-label" for="form-name">Your Name</label>
+              <input type="text" id="form-name" class="form-input" placeholder="John Doe" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="form-email">Your Email</label>
+              <input type="email" id="form-email" class="form-input" placeholder="john@example.com" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="form-message">Message</label>
+              <textarea id="form-message" class="form-textarea" placeholder="Hi Arun, I'd like to discuss a Flutter project..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+          </form>
+        </div>
+
+        <footer>
+          <div>© <span id="year">2026</span> Arun Pushpan. Built with Flutter Spirit 💙</div>
+          <div>Kerala, India</div>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="icon-btn" title="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </button>
+
+  <!-- ==========================================================================
+     EASTER EGG: FLUTTER WIDGET TREE OVERLAY
+     ========================================================================== -->
+  <div id="widget-tree-modal">
+    <div style="display: flex; justify-content: space-between; align-items: center; max-width: 800px; margin: 0 auto; color: #fff;">
+      <h3 style="font-family: var(--font-heading); color: var(--flutter-cyan);">🌳 Flutter Widget Inspector</h3>
+      <button class="icon-btn" id="close-widget-tree">✕</button>
+    </div>
+    
+    <div class="widget-tree-container">
+      <div><span class="tree-widget-name">MaterialApp</span> <span class="tree-widget-prop">(title: "Arun Pushpan Portfolio", theme: FlutterDarkTheme)</span></div>
+      <div class="tree-line">
+        <div><span class="tree-widget-name">Scaffold</span> <span class="tree-widget-prop">(backgroundColor: Color(0xFF080C14))</span></div>
+        <div class="tree-line">
+          <div><span class="tree-widget-name">SliverAppBar</span> <span class="tree-widget-prop">(pinned: true, title: "Arun.dev")</span></div>
+          <div><span class="tree-widget-name">CustomScrollView</span></div>
+          <div class="tree-line">
+            <div><span class="tree-widget-name">SliverToBoxAdapter</span> -&gt; <span class="tree-widget-name">HeroSection</span> <span class="tree-widget-prop">(badgeCount: 4, isAvailable: true)</span></div>
+            <div><span class="tree-widget-name">SliverToBoxAdapter</span> -&gt; <span class="tree-widget-name">StatsStrip</span> <span class="tree-widget-prop">(experienceYears: 3, appsDelivered: 8)</span></div>
+            <div><span class="tree-widget-name">SliverToBoxAdapter</span> -&gt; <span class="tree-widget-name">AboutSection</span> <span class="tree-widget-prop">(currentRole: "Team Lead")</span></div>
+            <div><span class="tree-widget-name">SliverToBoxAdapter</span> -&gt; <span class="tree-widget-name">ExpertiseSection</span> <span class="tree-widget-prop">(skills: ["Dart", "Bloc", "Firebase", ...])</span></div>
+            <div><span class="tree-widget-name">SliverToBoxAdapter</span> -&gt; <span class="tree-widget-name">ArchitectureDiagramWidget</span></div>
+            <div><span class="tree-widget-name">SliverToBoxAdapter</span> -&gt; <span class="tree-widget-name">CodeShowcaseWidget</span> <span class="tree-widget-prop">(activeTab: "counter_bloc.dart")</span></div>
+            <div><span class="tree-widget-name">SliverGrid</span> -&gt; <span class="tree-widget-name">ProjectsGrid</span> <span class="tree-widget-prop">(itemCount: 4)</span></div>
+            <div><span class="tree-widget-name">SliverToBoxAdapter</span> -&gt; <span class="tree-widget-name">ContactSection</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+     PROJECT DETAIL MODAL
+     ========================================================================== -->
+  <div id="project-modal">
+    <div class="modal-content">
+      <button class="modal-close" id="close-project-modal">✕</button>
+      <div id="modal-project-body">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+     JAVASCRIPT LOGIC
+     ========================================================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      /* 1. Loader Hide */
+      setTimeout(() => {
+        const loader = document.getElementById('loader');
+        loader.classList.add('hidden');
+      }, 1000);
+
+      /* 2. Theme Switcher */
+      const themeBtn = document.getElementById('theme-btn');
+      const htmlEl = document.documentElement;
+      
+      themeBtn.addEventListener('click', () => {
+        if (htmlEl.classList.contains('dark')) {
+          htmlEl.classList.remove('dark');
+          htmlEl.classList.add('light');
+          localStorage.setItem('theme', 'light');
+        } else {
+          htmlEl.classList.remove('light');
+          htmlEl.classList.add('dark');
+          localStorage.setItem('theme', 'dark');
+        }
+      });
+
+      /* 3. Typing Effect */
+      const words = [
+        "Flutter Developer",
+        "Mobile App Developer",
+        "Cross-Platform Engineer",
+        "Team Lead"
+      ];
+      let wordIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+      const typedTextEl = document.getElementById('typed-text');
+
+      function type() {
+        const currentWord = words[wordIndex];
+        if (isDeleting) {
+          typedTextEl.textContent = currentWord.substring(0, charIndex - 1);
+          charIndex--;
+        } else {
+          typedTextEl.textContent = currentWord.substring(0, charIndex + 1);
+          charIndex++;
+        }
+
+        let typeSpeed = isDeleting ? 40 : 80;
+
+        if (!isDeleting && charIndex === currentWord.length) {
+          typeSpeed = 2000;
+          isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+          isDeleting = false;
+          wordIndex = (wordIndex + 1) % words.length;
+          typeSpeed = 400;
+        }
+
+        setTimeout(type, typeSpeed);
+      }
+      type();
+
+      /* 4. Scroll Progress & Sticky Navbar */
+      const header = document.getElementById('header');
+      const scrollProgress = document.getElementById('scroll-progress');
+      const backToTopBtn = document.getElementById('back-to-top');
+
+      window.addEventListener('scroll', () => {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        scrollProgress.style.width = scrolled + "%";
+
+        if (winScroll > 50) {
+          header.classList.add('scrolled');
+          backToTopBtn.classList.add('visible');
+        } else {
+          header.classList.remove('scrolled');
+          backToTopBtn.classList.remove('visible');
+        }
+      }, { passive: true });
+
+      backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      /* 5. Mobile Drawer Menu */
+      const mobileBtn = document.getElementById('mobile-menu-btn');
+      const mobileDrawer = document.getElementById('mobile-drawer');
+      const mobileLinks = document.querySelectorAll('.mobile-link');
+
+      mobileBtn.addEventListener('click', () => {
+        mobileDrawer.classList.toggle('active');
+      });
+
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileDrawer.classList.remove('active');
+        });
+      });
+
+      /* 6. Section Scroll Reveal */
+      const observerOptions = { threshold: 0.15 };
+      const reveals = document.querySelectorAll('.reveal');
+
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+          }
+        });
+      }, observerOptions);
+
+      reveals.forEach(el => revealObserver.observe(el));
+
+      /* 7. Stats Counter Animation */
+      let statsAnimated = false;
+      const statsSection = document.querySelector('.stats-section');
+      const statNumbers = document.querySelectorAll('.stat-number');
+
+      const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !statsAnimated) {
+            statsAnimated = true;
+            statNumbers.forEach(numEl => {
+              const target = parseInt(numEl.getAttribute('data-target'));
+              let count = 0;
+              const step = Math.max(1, Math.floor(target / 40));
+              const timer = setInterval(() => {
+                count += step;
+                if (count >= target) {
+                  count = target;
+                  clearInterval(timer);
+                }
+                if (target === 10000) {
+                  numEl.textContent = count.toLocaleString() + "+";
+                } else if (numEl.getAttribute('data-target') === '30') {
+                  numEl.textContent = count + "%";
+                } else {
+                  numEl.textContent = count + "+";
+                }
+              }, 40);
+            });
+          }
+        });
+      }, { threshold: 0.5 });
+
+      if (statsSection) statsObserver.observe(statsSection);
+
+      /* 8. Code Showcase Tabs & Copy Button */
+      const codeTabs = document.querySelectorAll('.code-tab');
+      const codeBlocks = document.querySelectorAll('.code-block');
+      const copyBtn = document.getElementById('copy-code-btn');
+
+      codeTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          codeTabs.forEach(t => t.classList.remove('active'));
+          codeBlocks.forEach(b => b.classList.remove('active'));
+          
+          tab.classList.add('active');
+          const targetBlock = document.getElementById(tab.getAttribute('data-tab'));
+          if (targetBlock) targetBlock.classList.add('active');
+        });
+      });
+
+      copyBtn.addEventListener('click', () => {
+        const activeBlock = document.querySelector('.code-block.active');
+        if (activeBlock) {
+          navigator.clipboard.writeText(activeBlock.innerText);
+          const span = copyBtn.querySelector('span');
+          const origText = span.textContent;
+          span.textContent = 'Copied! ✓';
+          setTimeout(() => span.textContent = origText, 2000);
+        }
+      });
+
+      /* 9. Project Filtering */
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const projectCards = document.querySelectorAll('.project-card');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const filter = btn.getAttribute('data-filter');
+
+          projectCards.forEach(card => {
+            if (filter === 'all' || card.getAttribute('data-category') === filter) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      /* 10. Project Detail Modal */
+      const projectData = {
+        'buyit-app': {
+          title: 'BuyIt - Mobile Shopping Application',
+          role: 'Team Lead (Jan 2025 – Jan 2026)',
+          tech: 'Dart, Flutter, Node.js, PostgreSQL',
+          desc: 'A comprehensive shopping application enabling users to discover products, view detailed product information, manage shopping carts, and track order statuses with an intuitive interface.',
+          points: [
+            'Developed responsive screens for product browsing, product details, and shopping cart management.',
+            'Implemented product search and filtering algorithms.',
+            'Built full cart functionality for adding/removing products, quantity updates, and live totals calculation.',
+            'Integrated order history and real-time status tracking.'
+          ]
+        },
+        'buyit-admin': {
+          title: 'BuyIt - Admin Dashboard & Website',
+          role: 'Team Lead (Jan 2026 – Jun 2026)',
+          tech: 'Flutter, HTML, CSS, JavaScript, Node.js, PostgreSQL',
+          desc: 'Extended the BuyIt ecosystem with an administrative control platform and a marketing website.',
+          points: [
+            'Developed centralized dashboard for managing products, categories, customers, and orders.',
+            'Implemented real-time stock, price, and media availability management.',
+            'Designed responsive landing page showcasing application previews and phone mockups.',
+            'Coordinated sprint tasks, milestones, and peer code reviews as Team Lead.'
+          ]
+        },
+        'reachout': {
+          title: 'ReachOut - Communication Platform',
+          role: 'Team Member (Jun 2023 – Dec 2024)',
+          tech: 'Flutter, Node.js, PostgreSQL',
+          desc: 'Communication platform enabling user discovery, instant messaging, and profile management.',
+          points: [
+            'Built user registration, login, and profile management.',
+            'Created search & discovery features for finding contacts.',
+            'Integrated backend APIs for messaging and connection update notifications.'
+          ]
+        },
+        'rigging': {
+          title: 'Rigging Calculator - Engineering Tool',
+          role: 'Team Member (Jan 2023 – May 2023)',
+          tech: 'Flutter, Node.js, PostgreSQL',
+          desc: 'Engineering tool supporting preliminary rigging assessments by calculating sling tension and load distribution.',
+          points: [
+            'Developed intuitive input forms for load weight, sling angles, and leg configurations.',
+            'Displayed real-time calculated tension with clear units and label formatting.',
+            'Added input validation identifying missing inputs and invalid angle setups.'
+          ]
+        }
+      };
+
+      const projectModal = document.getElementById('project-modal');
+      const modalBody = document.getElementById('modal-project-body');
+      const closeProjectModal = document.getElementById('close-project-modal');
+
+      document.querySelectorAll('.open-modal-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const key = btn.getAttribute('data-project');
+          const data = projectData[key];
+          if (data) {
+            modalBody.innerHTML = `
+              <h2 style="font-family: var(--font-heading); margin-bottom: 0.5rem;">${data.title}</h2>
+              <div style="color: var(--flutter-cyan); font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem;">${data.role}</div>
+              <div style="font-size: 0.85rem; color: var(--text-dim); margin-bottom: 1.25rem;"><strong>Tech Stack:</strong> ${data.tech}</div>
+              <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 1.5rem;">${data.desc}</p>
+              <h4 style="font-family: var(--font-heading); margin-bottom: 0.75rem;">Key Contributions:</h4>
+              <ul style="padding-left: 1.25rem; color: var(--text-muted); line-height: 1.7;">
+                ${data.points.map(p => `<li>${p}</li>`).join('')}
+              </ul>
+            `;
+            projectModal.classList.add('active');
+          }
+        });
+      });
+
+      closeProjectModal.addEventListener('click', () => projectModal.classList.remove('active'));
+      projectModal.addEventListener('click', (e) => {
+        if (e.target === projectModal) projectModal.classList.remove('active');
+      });
+
+      /* 11. FAQ Accordion */
+      document.querySelectorAll('.faq-question').forEach(q => {
+        q.addEventListener('click', () => {
+          const item = q.parentElement;
+          item.classList.toggle('active');
+        });
+      });
+
+      /* 12. Flutter Widget Tree Easter Egg */
+      const treeBtn = document.getElementById('widget-tree-btn');
+      const treeModal = document.getElementById('widget-tree-modal');
+      const closeTreeBtn = document.getElementById('close-widget-tree');
+
+      treeBtn.addEventListener('click', () => treeModal.classList.add('active'));
+      closeTreeBtn.addEventListener('click', () => treeModal.classList.remove('active'));
+      treeModal.addEventListener('click', (e) => {
+        if (e.target === treeModal) treeModal.classList.remove('active');
+      });
+
+      /* 13. Contact Form Handling */
+      const contactForm = document.getElementById('contact-form');
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('form-name').value;
+        const email = document.getElementById('form-email').value;
+        const message = document.getElementById('form-message').value;
+
+        const mailto = `mailto:arunpushpan2018@gmail.com?subject=Portfolio Message from ${encodeURIComponent(name)}&body=${encodeURIComponent("Sender Email: " + email + "\n\n" + message)}`;
+        window.location.href = mailto;
+
+        alert(`Thank you ${name}! Opening your email client to send message...`);
+        contactForm.reset();
+      });
+
+      /* 14. CV Download Button */
+      const cvBtn = document.getElementById('cv-download-btn');
+      cvBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        alert("Downloading Arun Pushpan's Resume PDF...");
+        window.open('https://linkedin.com/in/arun-pushpan-54a287249', '_blank');
+      });
+
+      /* 15. Custom Cursor Lerp */
+      const cursorGlow = document.getElementById('cursor-glow');
+      let mouseX = 0, mouseY = 0;
+      let glowX = 0, glowY = 0;
+
+      document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+      });
+
+      function animateCursor() {
+        glowX += (mouseX - glowX) * 0.15;
+        glowY += (mouseY - glowY) * 0.15;
+        if (cursorGlow) {
+          cursorGlow.style.transform = `translate3d(${glowX}px, ${glowY}px, 0)`;
+        }
+        requestAnimationFrame(animateCursor);
+      }
+      animateCursor();
+
+      /* 16. Dynamic Material Ripple Effect */
+      document.querySelectorAll('.btn').forEach(button => {
+        button.addEventListener('click', function (e) {
+          const circle = document.createElement('span');
+          const diameter = Math.max(button.clientWidth, button.clientHeight);
+          const radius = diameter / 2;
+
+          const rect = button.getBoundingClientRect();
+          circle.style.width = circle.style.height = `${diameter}px`;
+          circle.style.left = `${e.clientX - rect.left - radius}px`;
+          circle.style.top = `${e.clientY - rect.top - radius}px`;
+          circle.classList.add('ripple');
+
+          const ripple = button.getElementsByClassName('ripple')[0];
+          if (ripple) ripple.remove();
+
+          button.appendChild(circle);
+        });
+      });
+
+    });
+  </script>
+</body>
+</html>
